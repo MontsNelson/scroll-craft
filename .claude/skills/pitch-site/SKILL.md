@@ -157,6 +157,12 @@ shape on a new client fails, so change the plan, not the log.
    node SC/scripts/shoot.mjs --url http://localhost:4600/<slug>/index.html --out <abs>/lab/shots
    ```
    Repeat with `--width 390 --height 844` and with `--reduced-motion`. Fix every dead-scroll or contrast line.
+   The harness only sees engine devices. A signature move written in page
+   script must publish its visible state with `data-sc-verify-state` (and
+   `data-sc-verify-hold="true"` during an authored silence), or the harness
+   reports false dead scroll. It also grades contrast only on `data-sc-cue`
+   text: measure any other text over photos yourself, at the brightest
+   backdrop pixel, at both widths.
 4. Check by hand:
    - a sideways rail has positive overflow
    - no horizontal page scroll at 375px
