@@ -26,3 +26,7 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# pitch-site: personal settings and client builds stay off this public repo.
+.claude/skills/pitch-site/config.md
+studio/

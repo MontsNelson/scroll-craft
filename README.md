@@ -201,6 +201,16 @@ plugins/nateherk-design/
 
 [`CHANGELOG.md`](plugins/nateherk-design/skills/scroll-craft/CHANGELOG.md) is worth reading on its own: it records what broke on each build and the rule that came out of it, rather than a feature list.
 
+## pitch-site (project skill in this fork)
+
+`.claude/skills/pitch-site/` turns a local business's website into a live
+scroll-craft demo on Netlify and a Gmail draft pitch (never sent). Any Claude
+Code session opened on this repository picks it up as `/pitch-site <url>`.
+Its helpers are in `.claude/skills/pitch-site/kit` (`npm i` there first), and
+the `site-auditor` agent is in `.claude/agents/`. Personal settings go in a
+git-ignored `config.md` (copy `templates/config.example.md`); client builds
+go in the git-ignored `studio/` folder.
+
 ## The one rule that matters most
 
 The engine is the mechanism and it is **never edited per project**. Theme it with six colour tokens and two fonts, write your own semantic HTML, and drive anything bespoke off the `--sc-p` custom property the engine publishes. A runtime that builds the page from a config object is exactly why every site built on one looks the same.

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>{{Business}} visit card</title>
+<!-- Print on A4 and cut out the card (A6, 105 x 148 mm). Leave it with the owner.
+     Replace every {{slot}}; swap the colours and fonts for the business's own brand.
+     QR: node ../kit/qr.mjs <demo url> "<brand colour>" and paste the SVG into #qr. -->
+<style>
+  :root { --ink: #1F4FA3; --ground: #F6F3EE; --rule: #A61E1E; }
+  @page { size: A4; margin: 12mm; }
+  body { margin: 0; font-family: system-ui, sans-serif; color: var(--ink); background: #fff; }
+  .card { width: 105mm; height: 148mm; box-sizing: border-box; padding: 9mm 9mm 8mm; border: 1px dashed #bbb;
+    background: var(--ground); display: flex; flex-direction: column; gap: 4mm; overflow: hidden; }
+  h1 { font: 700 10mm/0.95 system-ui, sans-serif; margin: 6mm 0 0; }
+  p { margin: 0; font-size: 3.4mm; line-height: 1.45; }
+  .qr { width: 46mm; height: 46mm; align-self: center; background: #fff; padding: 2mm; border-radius: 2mm; }
+  .qr svg { width: 100%; height: 100%; display: block; }
+  .url { text-align: center; font-weight: 500; }
+  .from { margin-top: auto; border-top: 0.6mm solid var(--rule); padding-top: 2.5mm; font-size: 3.2mm; }
+  @media screen { body { padding: 20px; background: #eee; } }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Your new website?</h1>
+    <p>I made a free concept website for {{Business}}, with {{what's real in it}}. Scan to see it on your phone, and {{the wow moment}}.</p>
+    <div class="qr" id="qr">{{QR SVG}}</div>
+    <p class="url">{{slug}}-demo.netlify.app</p>
+    <p class="from">From <b>{{Name}}</b>, {{one-line local tie}} · {{phone / email from config.md}}</p>
+  </div>
+</body>
+</html>
